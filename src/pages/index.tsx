@@ -1,19 +1,10 @@
-import { lobeChat } from '@lobehub/chat-plugin-sdk/client';
-import { memo, useEffect, useState } from 'react';
-
-import Data from '@/components/Render';
-import { ResponseData } from '@/type';
+import { memo } from 'react';
 
 const Render = memo(() => {
-  const [data, setData] = useState<ResponseData>();
-
-  useEffect(() => {
-    lobeChat.getPluginMessage().then((e: ResponseData) => {
-      setData(e);
-    });
-  }, []);
-
-  return <Data {...data}></Data>;
+  return <>
+    <title>Wolfram LobeChat Plugin</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+  </>;
 });
 
 export default Render;
