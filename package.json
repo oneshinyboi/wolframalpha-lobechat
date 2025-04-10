@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "next build",
-    "dev": "next dev -p 3400",
+    "dev": "next dev",
     "start": "next start",
     "type-check": "tsc --noEmit"
   },
@@ -42,12 +42,14 @@
     "@lobehub/chat-plugin-sdk": "^1",
     "@lobehub/chat-plugins-gateway": "^1",
     "@lobehub/ui": "latest",
+    "@types/cors": "^2.8.17",
     "antd": "^5",
     "antd-style": "^3",
+    "cors": "^2.8.5",
     "dayjs": "^1",
-    "next": "13.4.7",
-    "react": "^18",
-    "react-dom": "^18",
+    "next": "15.2.4",
+    "react": ">=18",
+    "react-dom": ">=18",
     "react-layout-kit": "^1"
   },
   "devDependencies": {
