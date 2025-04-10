@@ -1,5 +1,9 @@
 import { createErrorResponse, getPluginSettingsFromRequest, PluginErrorType } from "@lobehub/chat-plugin-sdk"
 
+export const config = {
+  runtime: 'edge',
+};
+
 export default async function (req: Request) {
   const settings = getPluginSettingsFromRequest(req)
   const { query } = await req.json()
