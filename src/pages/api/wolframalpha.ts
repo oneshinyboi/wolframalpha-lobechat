@@ -13,7 +13,7 @@ export default async function (req: Request) {
   try {
     const response = await fetch(`http://api.wolframalpha.com/v2/query?appid=${settings.APP_ID}&includepodid=Result&format=plaintext&input=${encodeURIComponent(query)}`);
     return new Response(await response.text());
-  } catch (err) {
-    return createErrorResponse(PluginErrorType.PluginServerError, err as object)
+  } catch (error) {
+    return createErrorResponse(PluginErrorType.PluginServerError, error as object)
   }
 }
