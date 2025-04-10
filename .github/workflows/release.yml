@@ -5,29 +5,19 @@ on:
       - main
 
 jobs:
-  release:
-    name: Release
+
+  build:
+
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install bun
-        uses: oven-sh/setup-bun@v1
-
-      - name: Install deps
-        run: bun i
-
-      - name: CI
-        run: bun run ci
-
-      - name: Test
-        run: bun run test
-
-      - name: build
-        run: bun run build
-
-      - name: release
-        run: bun run release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
+      - name: Push Docker image
+        run: |
+          TIMESTAMP=$(date +%s)
+          docker build . --file Dockerfile --tag diamondcoder295/wolframalpha-lobechat:$TIMESTAMP
+          docker tag diamondcoder295/wolframalpha-lobechat:$TIMESTAMP diamondcoder295/discord-minecraft-bot:latest
+          docker push diamondcoder295/wolframalpha-lobechat:$TIMESTAMP
+          docker push diamondcoder295/wolframalpha-lobechat:latest
