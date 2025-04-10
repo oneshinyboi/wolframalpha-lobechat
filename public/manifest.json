@@ -29,7 +29,7 @@
   "api": [
     {
       "name": "queryWolfram",
-      "url": "https://wolframalpha-lobechat.vercel.app/api/wolfram",
+      "url": "https://wolframalpha-lobechat.vercel.app/api/wolframalpha",
       "description": "The query to send to Wolfram Alpha. This should be a specific question, mathematical expression, or data request.",
       "parameters": {
         "required": [
