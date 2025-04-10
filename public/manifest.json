@@ -4,7 +4,7 @@
   "identifier": "wolframalpha",
   "author": "oneshinyboi",
   "homepage": "https://github.com/oneshinyboi/wolframalpha-api",
-  "gateway": "https://wolframalpha-lobechat.veryshiny.net/api/gateway",
+  "gateway": "https://wolframalpha-lobechat.vercel.app/api/gateway",
   "meta": {
     "avatar": "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.wolframalpha.com/&size=256",
     "tags": [
@@ -29,7 +29,7 @@
   "api": [
     {
       "name": "queryWolfram",
-      "url": "https://wolframalpha-lobechat.veryshiny.net/api/wolfram",
+      "url": "https://wolframalpha-lobechat.vercel.app/api/wolfram",
       "description": "The query to send to Wolfram Alpha. This should be a specific question, mathematical expression, or data request.",
       "parameters": {
         "required": [
