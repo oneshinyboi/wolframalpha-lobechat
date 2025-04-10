@@ -18,6 +18,6 @@ jobs:
         run: |
           TIMESTAMP=$(date +%s)
           docker build . --file Dockerfile --tag diamondcoder295/wolframalpha-lobechat:$TIMESTAMP
-          docker tag diamondcoder295/wolframalpha-lobechat:$TIMESTAMP diamondcoder295/discord-minecraft-bot:latest
+          docker tag diamondcoder295/wolframalpha-lobechat:$TIMESTAMP diamondcoder295/wolframalpha-lobechat:latest
           docker push diamondcoder295/wolframalpha-lobechat:$TIMESTAMP
           docker push diamondcoder295/wolframalpha-lobechat:latest
